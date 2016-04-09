@@ -1,9 +1,9 @@
 {
-  "name": "Base HTML Dev Structure",
+  "name": "base-html",
   "version": "0.0.1",
   "description": "Base project structure for HTML template development",
   "author": "Alexander Rizhikoff",
-  "license": "GPLv3",
+  "license": "GPL",
   "devDependencies": {
     "browser-sync": "^2.11.2",
     "gulp": "^3.9.1",
