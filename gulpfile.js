@@ -26,7 +26,7 @@ gulp.task("jade", function () {
 gulp.task("browserSync", function () {
   browserSync.init({
     server: {
-      baseDir: "./"
+      baseDir: "dist"
     },
   });
 });
