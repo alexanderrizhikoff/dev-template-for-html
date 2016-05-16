@@ -1,6 +1,7 @@
 var gulp = require("gulp"),
     sass = require("gulp-sass"),
     jade = require("gulp-jade"),
+    coffee = require("gulp-coffee"),
     imagemin = require("gulp-imagemin"),
     browserSync = require("browser-sync").create();
 
@@ -30,6 +31,12 @@ gulp.task("jade", function () {
     }));
 });
 
+gulp.task("coffee", function() {
+  gulp.src("src/coffee/**/*.coffee")
+    .pipe(coffee({bare: true}))
+    .pipe(gulp.dest("dist/js"));
+});
+
 gulp.task("browserSync", function () {
   browserSync.init({
     server: {
@@ -38,8 +45,11 @@ gulp.task("browserSync", function () {
   });
 });
 
-gulp.task("watch", ["browserSync", "sass", "jade", "imagemin"], function () {
+gulp.task("watch", ["browserSync", "sass", "jade", "imagemin", "coffee"], function () {
   gulp.watch("src/sass/**/*.sass", ["sass"]);
   gulp.watch("src/**/*.jade", ["jade"]);
   gulp.watch("src/img/*", ["imagemin"]);
+  gulp.watch("src/coffee/*.coffee", ["coffee"]);
 });
+
+gulp.task("default", ["watch"]);
