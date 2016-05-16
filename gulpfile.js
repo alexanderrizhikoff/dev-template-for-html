@@ -1,5 +1,6 @@
 var gulp = require("gulp"),
     sass = require("gulp-sass"),
+    autoprefixer = require("gulp-autoprefixer"),
     jade = require("gulp-jade"),
     coffee = require("gulp-coffee"),
     imagemin = require("gulp-imagemin"),
@@ -8,6 +9,7 @@ var gulp = require("gulp"),
 gulp.task("sass", function () {
   return gulp.src("src/sass/custom.sass")
     .pipe(sass())
+    .pipe(autoprefixer())
     .pipe(gulp.dest("dist/css"))
     .pipe(browserSync.reload({
       stream: true
@@ -17,7 +19,10 @@ gulp.task("sass", function () {
 gulp.task("imagemin", function() {
   gulp.src("src/img/*")
     .pipe(imagemin())
-    .pipe(gulp.dest("dist/img"));
+    .pipe(gulp.dest("dist/img"))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 gulp.task("jade", function () {
@@ -34,7 +39,10 @@ gulp.task("jade", function () {
 gulp.task("coffee", function() {
   gulp.src("src/coffee/**/*.coffee")
     .pipe(coffee({bare: true}))
-    .pipe(gulp.dest("dist/js"));
+    .pipe(gulp.dest("dist/js"))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 });
 
 gulp.task("browserSync", function () {
