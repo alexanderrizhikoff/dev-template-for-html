@@ -13,7 +13,7 @@ gulp.task("sass", function () {
 });
 
 gulp.task("jade", function () {
-  return gulp.src("src/**/*.jade")
+  return gulp.src("src/*.jade")
     .pipe(jade({
       pretty: true
     }))
