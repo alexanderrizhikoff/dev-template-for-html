@@ -20,6 +20,15 @@ git clone https://github.com/alexanderrizhikoff/dev-template-for-html.git store-
 
 ## Usage
 
+First of all you need to install Gulp globally:
+```
+npm install -g gulp
+```
+or
+```
+sudo npm install -g gulp
+```
+
 Go to [PROJECT_NAME] folder:
 
 ```
