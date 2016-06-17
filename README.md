@@ -1,4 +1,12 @@
-## Install instructions
+## Template for HTML development
+
+## What's include
+#### Jade template engine
+[jade-lang.com](http://jade-lang.com/)
+#### Sass
+[sass-lang.com](http://sass-lang.com/)
+#### Coffeescript
+[coffeescript.org](http://coffeescript.org/)
 
 ## Install
 
