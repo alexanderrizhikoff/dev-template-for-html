@@ -40,7 +40,7 @@ gulp.task("ts", function() {
   gulp.src("src/**/*.ts")
     .pipe(ts({
       noImplicitAny: true,
-      out: 'output.js'
+      out: 'main.js'
     }))
     .pipe(gulp.dest("dist/js"))
     .pipe(browserSync.reload({
